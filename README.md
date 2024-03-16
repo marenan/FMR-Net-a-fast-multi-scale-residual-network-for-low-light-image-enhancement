@@ -12,6 +12,7 @@ model.py ----You can modify the network structure
 ## Supplementary Note
 ```
 The dataset used is the LOL dataset, and you can also use other supervised learning datasets
+The way we set up the "test_data", we need your images to be in numerical order, starting with "1"
 ```
 
 ## Bibtex
