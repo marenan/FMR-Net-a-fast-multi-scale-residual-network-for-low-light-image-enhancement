@@ -11,7 +11,6 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.nn.functional as F
 import math
-from thop import profile
 # ----------------------------------------------------------------------------------------------------------------------
 class laplacian(nn.Module):
     def __init__(self, channels):
@@ -131,10 +130,3 @@ class Fast_Robust_Curve_Net(nn.Module):
         out_e = self.Fast_Conv(torch.add(enhance, out3))
         out = self.Conv_end(out_e)
         return out
-
-if __name__ == "__main__":
-    model = Fast_Robust_Curve_Net(24)
-    input = torch.randn(1, 3, 256, 256)
-    flops, params = profile(model, inputs=(input, ))
-    print("flops:{}".format(flops))
-    print("params:{}".format(params))
